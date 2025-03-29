@@ -22,6 +22,7 @@ def salvaTamanho(instancia, matriz):
     arquivo = open('C:/Users/Nicolas/Documents/UNIFEI/grafos/Arquivos/Resultados/' + instancia + '_exemplo.txt', 'w')
     arquivo.write(texto + '\n')   
     arquivo.close()
+    print(texto)  
 
 """
     Função principal que chama as outras funções.
@@ -32,7 +33,7 @@ def main(instancia):
     salvaTamanho(instancia, matriz)  
 
 """
-    Usa do primeiro arumento do terminal como nome do arquivo de entrada (exemplo, ponte, zachary).
+    Usa do primeiro argumento do terminal como nome do arquivo de entrada (exemplo, ponte, zachary).
     Terminal: py main.py exemplo 
 """
 if __name__ == "__main__":
