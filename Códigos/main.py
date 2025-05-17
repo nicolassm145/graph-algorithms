@@ -1,5 +1,6 @@
 import sys
-from Inicialização import matriz as mt, salva as sv
+from Códigos.Inicialização import cria as cr
+from Inicialização import salva as sv
 from Manipulação import densidade as ds, manipula as mp, teste as ts
 
 """
@@ -7,7 +8,7 @@ from Manipulação import densidade as ds, manipula as mp, teste as ts
     Entrada: instancia - nome do arquivo dado pelo terminal
 """
 def main(instancia):
-    matriz = mt.criaMatriz(instancia)
+    matriz = cr.criaMatriz(instancia)
     sv.salvaTamanho(instancia, matriz)
     print(ds.calcDensidade(matriz))
 

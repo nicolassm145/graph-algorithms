@@ -29,3 +29,24 @@ def criaListaAdjacencias(matriz):
                 num -= 1
 
     return listaAdj
+
+import numpy as np
+
+"""
+    Calcula o fecho transitiva de um grafo usando o algoritmo de Warshall.
+    Entrada: matriz (NxN) binária de adjacência.
+    Saída: imprime a matriz resultante onde 1 indica existência de caminho entre vértices.
+"""
+def warshall(matriz):
+    qtd = np.shape(matriz)[0]
+    copiaMatriz = np.array(matriz)
+
+    for k in range(qtd):
+        for i in range(qtd):
+            for j in range(qtd):
+                if copiaMatriz[i][j] == 1 or (copiaMatriz[i][k] == 1 and copiaMatriz[k][j] == 1):
+                    copiaMatriz[i][j] = 1
+                else:
+                    copiaMatriz[j][j] == copiaMatriz[i][j]
+                    
+    return copiaMatriz    

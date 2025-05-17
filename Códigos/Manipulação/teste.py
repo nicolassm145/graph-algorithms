@@ -96,3 +96,24 @@ def tipoGrafoLista(listaAdj):
         result = multi + digrafo
     # Se não passar em nenhum if então é um grafo simples (0)
     return result
+
+"""
+    Verifica se existe caminho ou circuito euleriano em grafo não direcionado.
+    Entrada: matriz (NxN) de adjacência.
+    Saída: True se <=2 vértices de grau ímpar, caso contrário False.
+"""
+def caminhoEuleriano(matriz):
+    qtd = np.shape(matriz)[0]
+    total = 0
+    i = 0
+    
+    while (total <= 2) and (i < qtd):
+        for vertice in range(qtd):
+            if np.sum(matriz[vertice]) % 2 != 0: 
+                total += 1
+        i += 1
+    
+    if total > 2:
+        return False
+    else:
+        return True
